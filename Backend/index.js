@@ -1,6 +1,23 @@
 const express = require('express')
 const app = express()
 
+let users = [
+  {
+    name: "Carlos",
+    last_name: "Alonso",
+    gov_id: "A1",
+    email: "carlos@sura.com",
+    company: "Sura"
+  },
+  {
+    name: "Juan",
+    last_name: "Gomez",
+    gov_id: "A2",
+    email: "juan@bancolombia.com",
+    company: "Bancolombia"
+  }
+]
+
 let orders = [
   {
     order_id: 1,
@@ -34,6 +51,10 @@ app.get('/', (request, response) => {
 
 app.get('/orders', (request, response) => {
   response.json(orders)
+})
+
+app.get('/users', (request, response) => {
+  response.json(users)
 })
 
 const PORT = 3001
